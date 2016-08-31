@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'devise', '~> 4.1', '>= 4.1.1'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'guard-rspec', require: false
