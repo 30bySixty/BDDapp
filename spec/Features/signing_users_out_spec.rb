@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature "Users sign out" do
+RSpec.feature "Sign out signed-in users" do
   before do
     @foo = User.create(email: "foo@bar.com", password: "password")
     
