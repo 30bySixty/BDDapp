@@ -1,0 +1,5 @@
+<h1>New Exercise for <%= current_user.full_name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to "Back", user_exercises_path(current_user), class: "btn" %>

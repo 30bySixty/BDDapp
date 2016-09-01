@@ -1,0 +1,23 @@
+<%= form_for([current_user, @exercise], :html => {class: "form-horizontal", role: "form"}) do |f| %>
+  <% if @exercise.errors.any? %>
+    <%= pluralize(@exercise.errors.count, "error") %> prohibited this exercise frmo being saved:
+    <ul>
+    <%= @exercise.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+<div>
+<%= f.label :duration_in_min, "Duration (min)" %>
+<%= f.number_field :duration_in_min, class: "form-control" %>
+</div>
+<div>
+  <%= f.label :workout, "Workout Details" %>
+  <%= f.text_area :workout, class: "form-control", rows: 10 %>
+</div>
+<div>
+  <%= f.label :workout_date, "Activity Date" %>
+  <%= f.text_field :workout_date, class: "form-control" %>
+</div>
+<%= f.submit class: "btn" %>
+<% end %>
