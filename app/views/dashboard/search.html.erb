@@ -1,0 +1,8 @@
+<div class="search-result">
+  <% @athletes.each do |athlete| %>
+  <div class="member">
+    <%= athlete.full_name %>
+  </div>
+  <% end %>
+</div>
+<%= will_paginate @athletes, renderer: BootstrapPagination::Rails %>
