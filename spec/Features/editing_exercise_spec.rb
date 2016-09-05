@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.feature "Editing Exercise" do
   before do
     @owner = User.create(email: "owner@bar.com", password: "password")  
-    @owner_exer = @owner.exercises.create(duration_in_min: 20, workout: "Cardio Routine", workout_date: Date.today)
+    @owner_exer = @owner.exercises.create(duration_in_min: 21, workout: "Cardio Routine", workout_date: Date.today)
     login_as(@owner)
   end
   
@@ -17,7 +17,7 @@ RSpec.feature "Editing Exercise" do
     
     expect(page).to have_content("Exercise has been updated")
     expect(page).to have_content(45)
-    expect(page).not_to have_content(20)
+    expect(page).not_to have_content(21)
   end
   
   
