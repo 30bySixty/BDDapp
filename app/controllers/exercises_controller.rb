@@ -3,6 +3,7 @@ class ExercisesController < ApplicationController
   before_action :set_exercise, except: [:index, :new, :create]
   
   def index
+    @exercises = current_user.exercises.all
   end
   
   def new
@@ -15,6 +16,7 @@ class ExercisesController < ApplicationController
     if @exercise.save
       flash[:success] = "Exercise has been created"
       redirect_to [current_user, @exercise]
+#      redirect_to user_exercises_path
     else
       flash[:danger] = "Exercise has not been created."
       render :new #render new template
