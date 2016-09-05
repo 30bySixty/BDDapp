@@ -2,3 +2,13 @@
   <h1>Workout Lounge</h1>
   <p>Show off your workouts.</p>
 </div>
+<div>
+  <h2>List of Members</h2>
+</div>
+<div>
+  <% @athletes.each do |athlete| %>
+  <div>
+    <%= athlete.full_name %>
+  </div>
+  <% end %>
+</div>
