@@ -32,3 +32,16 @@
   <%= content_tag :div, "" ,id: "chart", data: {workouts: @exercises} %>
   <% end %>
 </div>
+
+<div>
+  <h1>My Friends</h1>
+  <% @friends.each do |friend| %>
+  <div>
+    <%= link_to friend.full_name, friendship_path(current_user.current_friendship(friend)) %>
+  </div>
+  <div>
+    <%= link_to "Unfollow", friendship_path(current_user.current_friendship(friend)), method: :delete, data: {confirm: "Are you sure?"}, class: "btn" %>
+  </div>
+  <% end %>
+</div>
+
