@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @friend.full_name %>'s Exercises</h1>
+
+<h1>Listing Exercises</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Duration (min)</th>
+      <th>Workout Detail</th>
+      <th>Activity Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @exercises.each do |exercise| %>
+      <tr>
+        <td><%= exercise.duration_in_min %></td>
+        <td><%= truncate(exercise.workout, length: 100) %></td>
+        <td><%= exercise.workout_date %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if false %>
+<%= content_tag :div, "", id: "chart", data: {workouts: @exercises} %>
+<% end %>
+<%= link_to "Back", user_exercises_path(current_user), class: "btn" %>
